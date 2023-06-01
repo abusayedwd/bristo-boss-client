@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Chefservice from "../../../component/Chefservice";
 import Benner from "../Benner/Benner";
 import Category from "../Catregory/Category";
@@ -10,6 +11,9 @@ import Testimonial from "../Testimonials/Testimonial";
 const Home = () => {
         return (
                 <div>
+                        <Helmet>
+        <title>Bristo Boss | Home</title>
+           </Helmet>
                         <Benner></Benner>
                         <div className="my-16">
                         <Category></Category>

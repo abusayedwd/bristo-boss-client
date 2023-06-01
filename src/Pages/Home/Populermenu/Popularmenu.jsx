@@ -1,22 +1,29 @@
  
 import TitleSection from '../../../component/TitleSection/TitleSection';
-import { useEffect, useState } from 'react';
 import Menuitem from '../../Shared/menuitem/Menuitem';
+import UseMenu from '../../../Hooks/UseMenu';
+import { useEffect, useState } from 'react';
 
 const Popularmenu = () => {
-        const [popular, setPopular] = useState([])
-        useEffect( () => {
-                fetch("menu.json")
-                .then(res => res.json())
-                .then(data => {
+
+        const [menu] = UseMenu();
+        
+        const popular = menu.filter(item => item.category === 'popular')
+
+
+        // const [popular, setPopular] = useState([])
+        // useEffect( () => {
+        //         fetch("menu.json")
+        //         .then(res => res.json())
+        //         .then(data => {
                         
-                        const popularmenu = data.filter(item => item.category === 'popular');
-                        setPopular(popularmenu)
+        //                 const popularmenu = data.filter(item => item.category === 'popular');
+        //                 setPopular(popularmenu)
                          
 
-                })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        },[ ])
+        //         })
+        // // eslint-disable-next-line react-hooks/exhaustive-deps
+        // },[ ])
         return (
                 <div>
                         <section>
