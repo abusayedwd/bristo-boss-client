@@ -1,15 +1,34 @@
-import React from 'react';
+ 
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Navbar = () => {
+      const {logOut,user} = useContext(AuthContext)
+
+
+        const handleLogout = () =>{
+          logOut()
+           .then( () => {})
+           .catch(error => console.log(error))
+        }
 
         const nabitem = <> 
-       <li>
-        <Link to = '/'>Home</Link>
-       </li>
-       <li>
-        <Link to = '/menu'>Our Menu</Link>
-       </li>
+       <li><Link to = '/'>Home</Link></li>
+       <li><Link to = '/menu'>Our Menu</Link> </li>
+       <li><Link to = '/order/dessert'>Order Food</Link> </li>
+       <li><Link to = '/secret'>Secret</Link> </li>
+       {
+          user ?
+           <>
+           <button onClick={handleLogout} className="btn btn-active btn-ghost">Logout</button>
+            <img className='h-10 rounded-full' title={user.displayName} src={user?.photoURL} alt="" />
+          </>: 
+          <>
+          
+          <li><Link to = '/login'>Login</Link> </li>
+          </>
+       }
         
         </>
 

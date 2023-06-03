@@ -1,4 +1,5 @@
-import { Helmet } from "react-helmet";
+ 
+import { Helmet } from "react-helmet-async";
 import Chefservice from "../../../component/Chefservice";
 import Benner from "../Benner/Benner";
 import Category from "../Catregory/Category";
