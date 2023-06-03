@@ -5,6 +5,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate,  validateCaptcha } from 'react-
 import login2 from '../../assets/others/authentication2.png'
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import GoogleLogin from './GoogleLogin';
 
 
 const Login = () => {
@@ -103,6 +104,7 @@ const Login = () => {
                         <p>{error}</p>
                         <div className="form-control mt-6">
                                 <input disabled ={disabled} className="btn btn-primary" type="submit" value="Login" />
+                                <GoogleLogin></GoogleLogin>
 
                         </div>
                 </form>
