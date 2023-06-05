@@ -10,6 +10,8 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../SignUp/SignUp";
 import Sceret from "../Pages/Cecret/Sceret";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import Mycart from "../Pages/Dashboar/Mycart/Mycart";
  
 
 
@@ -45,4 +47,15 @@ import PrivateRoute from "./PrivateRoute";
           ]
           
         },
+
+        {
+          path:'dashboard',
+          element:<Dashboard></Dashboard>,
+          children:[
+            {
+              path:'mycart',
+              element:<Mycart></Mycart>
+            }
+          ]
+        }
       ]);
